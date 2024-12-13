@@ -1,0 +1,63 @@
+.footer {
+    background-color: aqua;
+    min-height: 589px;
+    position: relative;
+}
+
+.footer__black {
+    width: 1240px;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.footer__black-title {
+    max-width: 551px;
+    font-family: integral, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: #fff;
+    line-height: 47px;
+    padding: 43px 0;
+}
+
+/* Форма подписки */
+
+.footer__black-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    padding: 36px 0;
+}
+
+.footer__black-input-container {
+    position: relative;
+}
+
+.footer__black-input-img {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+}
+
+
+.footer__black-input {
+    width: 349px;
+    padding: 12px 52px 14px 52px;
+    background-color: var(--bg-color);
+    border-radius: 62px;
+}
+
+.footer__black-btn {
+    display: inline-block;
+    font-family: satoshi-medium;
+    color: #000;
+    padding: 12px 88.5px;
+    background-color: var(--bg-color);
+    border-radius: 62px;
+}
