@@ -40,3 +40,7 @@ body {
   min-height: 30vh;
   margin-bottom: 10px;
 }
+
+.t-60-op {
+  color: var(--secondary-color);
+}
