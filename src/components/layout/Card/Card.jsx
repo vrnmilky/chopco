@@ -2,14 +2,14 @@ import './card.css';
 import arrImg1 from './../../img/body/arrivals/arrivals1.jpg'
 import ratingImg from './../../img/body/stars/4.5-stars.png'
 
-const Card = () => {
+const Card = ({title, img}) => {
     return ( 
         <div className="card">
             <a href="#!"className='card__link'></a>
-            <img className='card__img' src={arrImg1} alt="arrImg" />
+            <img className='card__img' src={img} alt="arrImg" />
             <div className="card__body">
                 <div className="card__title">
-                Skinny Fit Jeans
+                {title}
                 </div>
                 <div className="card__rating">
                     <img src={ratingImg} alt="stars" />
