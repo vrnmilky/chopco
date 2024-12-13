@@ -1,0 +1,23 @@
+.arrivals__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--ten-percent-color);
+    margin-bottom: 64px;
+}
+
+.arrivals__title {
+    font-family: integral, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+
+.card__container {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}

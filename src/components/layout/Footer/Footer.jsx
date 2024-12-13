@@ -1,4 +1,4 @@
-import './Footer.css';
+import './footer.css';
 import mailImg from './../../img/footer/mail.svg';
 import logoImg from './../../img/header/nav/logo.svg';
 import twitImg from './../../img/footer/social/1.png';
