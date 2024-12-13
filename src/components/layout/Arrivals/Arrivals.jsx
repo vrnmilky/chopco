@@ -3,7 +3,7 @@ import './arrivals.css'
 
 const Arrivals = () => {
     return (
-        <div className="arrivals">
+        <section className="arrivals">
             <div className="container">
                 <div className="arrivals__container">
                     <div className="arrivals__title">
@@ -20,7 +20,7 @@ const Arrivals = () => {
                     </a>
                 </div>
             </div>
-        </div >
+        </section >
     );
 }
 
