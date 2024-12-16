@@ -1,5 +1,6 @@
 .modalBox {
     width: 60vw;
+    min-width: 450px;
     height: auto;
     min-height: 400px;
     padding: 30px;
@@ -8,7 +9,7 @@
     position: absolute;
     top: 20vh;
     left: calc(50% - 30vw);
-    background-color: #fff; 
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,11 +34,30 @@
     border-radius: 62px;
 }
 
+.modalBox button {
+    transition: all 0.3s ease-out;
+}
+
+.modalBox button:hover {
+    box-shadow: 0px 5px 5px red;
+}
+
+.modalBox button:active {
+    box-shadow: none;
+}
+
+
+
 .modalBox input {
-    color: var(--ten-percent-color);
-    padding: 12px 154px 14px 52px;
+
+    padding: 12px 0 14px 52px;
+    width: 374px;
     border-radius: 62px;
     background-color: var(--bg-color);
+}
+
+.modalBox input::placeholder {
+    color: var(--secondary-color);
 }
 
 .echo {

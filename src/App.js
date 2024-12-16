@@ -7,14 +7,17 @@ import Cart from './components/views/Cart/Cart';
 import ModalBox from './components/modalBox/ModalBox';
 import Login from './components/layout/Login';
 import Registration from './components/layout/Registration';
+import MainArrivals from './components/layout/Arrivals/MainArrivals';
+import HeroInfo from './components/layout/HeroInfo/HeroInfo';
 
 function App() {
   const [page, setPage] = useState('Main')
   const [modalBox, setModalBox] = useState('')
 
   const pages = {
-    Main: <Arrivals />,
-    Cart: <Cart />
+    Main: () => <Arrivals setPage={setPage} />,
+    Cart: () => <Cart setPage={setPage} />,
+    MainArrivals: () => <MainArrivals />
   }
   const modalBoxes = {
     none: null,
@@ -26,8 +29,9 @@ function App() {
   return (
     <div className="App">
       <Header setPage={setPage} setModalBox={setModalBox} />
-      <Brands />
-      {pages[page]}
+      {page === 'Main' && <HeroInfo />}
+      {page === 'Main' && <Brands />}
+      {pages[page]()}
       {modalBoxes [modalBox]}
       <Footer />
     </div>

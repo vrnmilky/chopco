@@ -5,7 +5,7 @@ import arrImg2 from './../../img/body/arrivals/arrivals2.jpg'
 import arrImg3 from './../../img/body/arrivals/arrivals3.jpg'
 import arrImg4 from './../../img/body/arrivals/arrivals4.jpg'
 
-const Arrivals = () => {
+const Arrivals = ({setPage}) => {
     return (
         <section className="arrivals">
             <div className="container">
@@ -19,7 +19,7 @@ const Arrivals = () => {
                         <Card title='Checkered Shir' img={arrImg3}/>
                         <Card title='Sleeve Striped T-shirt' img={arrImg4}/>
                     </div>
-                    <a className="views__btn" href="#!">
+                    <a className="views__btn" href="#!"  onClick={() => setPage('MainArrivals')}>
                         View All
                     </a>
                 </div>

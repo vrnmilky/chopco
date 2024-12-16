@@ -1,0 +1,14 @@
+.main_arrivals-container {
+    max-width: 925px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 20px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--ten-percent-color);
+    margin-bottom: 20px;
+}
+
+.MainArrivals-body {
+    display: flex;
+    column-gap: 20px;
+}

@@ -1,0 +1,5 @@
+.filter__container {
+    min-width: 295px;
+    height: 1220px;
+    background-color: var(--bg-color);
+}

@@ -12,7 +12,7 @@ function Header({ setPage, setModalBox }) {
     <header className="header">
       <div className='container'>
         <div className='header__row'>
-          <a href="#!"><img src={logoImg} className='header__logo' alt="logo" /></a>
+          <a onClick={()=> setPage('Main')} href="#!"><img src={logoImg} className='header__logo' alt="logo" /></a>
           <nav className='header__nav'>
             <ul>
               <li><a className='header__nav-arrow' href="#!">Shop <img src={arrowImg} alt="arrow" /></a></li>
