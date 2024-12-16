@@ -1,0 +1,60 @@
+.modalBox {
+    width: 60vw;
+    height: auto;
+    min-height: 400px;
+    padding: 30px;
+    border-radius: 62px;
+    border: 1px solid var(--ten-percent-color);
+    position: absolute;
+    top: 20vh;
+    left: calc(50% - 30vw);
+    background-color: #fff; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3;
+}
+
+.modalBox h1 {
+    font-family: integral, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+}
+
+.modalBox a {
+    color: var(--secondary-color);
+}
+
+.modalBox button {
+    width: 374px;
+    height: 48px;
+    background-color: black;
+    color: #fff;
+    border-radius: 62px;
+}
+
+.modalBox input {
+    color: var(--ten-percent-color);
+    padding: 12px 154px 14px 52px;
+    border-radius: 62px;
+    background-color: var(--bg-color);
+}
+
+.echo {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    z-index: 2;
+}
+
+
+.login__container {
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}

@@ -7,7 +7,7 @@ import shoppingImg from './../../img/header/nav/shopping.svg';
 
 import './header.css';
 
-function Header() {
+function Header({ setPage, setModalBox }) {
   return (
     <header className="header">
       <div className='container'>
@@ -15,7 +15,7 @@ function Header() {
           <a href="#!"><img src={logoImg} className='header__logo' alt="logo" /></a>
           <nav className='header__nav'>
             <ul>
-              <li><a className='header__nav-arrow' href="#!">Shop <img src={arrowImg} alt="arrow"/></a></li>
+              <li><a className='header__nav-arrow' href="#!">Shop <img src={arrowImg} alt="arrow" /></a></li>
               <li><a href="#!">On Sale</a></li>
               <li><a href="#!">New Arrivals</a></li>
               <li><a href="#!">Brands</a></li>
@@ -26,8 +26,8 @@ function Header() {
             <input type="text" placeholder='Search for products...' />
           </div>
           <div className="header__user-cart">
-            <a href="#!"><img src={shoppingImg} alt="" /></a>
-            <a href="#!"><img src={loginImg} alt="" /></a>
+            <a onClick={()=> setPage('Cart')} href="#!"><img src={shoppingImg} alt="" /></a>
+            <a onClick={()=> setModalBox('Login')} href="#!"><img src={loginImg} alt="" /></a>
           </div>
         </div>
       </div>
