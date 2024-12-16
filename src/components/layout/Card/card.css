@@ -1,5 +1,13 @@
 .card {
     position: relative;
+    width: 295px;
+    height: 408px;
+    flex-shrink: 0;
+}
+.card__img {
+    display: inline-block;
+    width: 295px;
+    height: 298px;
 }
 
 .card:hover .card__img {

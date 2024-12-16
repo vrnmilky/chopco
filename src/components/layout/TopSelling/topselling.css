@@ -17,7 +17,9 @@
 
 .card__container {
     display: flex;
+    column-gap: 20px;
     align-items:center;
     justify-content: space-between;
+    overflow: hidden;
     margin-bottom: 36px;
 }

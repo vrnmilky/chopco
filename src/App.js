@@ -17,22 +17,22 @@ function App() {
   const pages = {
     Main: () => <Main setPage={setPage} />,
     Cart: () => <Cart setPage={setPage} />,
-    ProductPage: () => <ProductPage/>
+    ProductPage: () => <ProductPage />
   }
   const modalBoxes = {
     none: null,
-    Login:  <ModalBox setModalBox={setModalBox}><Login/></ModalBox>,
-    Registration:  <ModalBox setModalBox={setModalBox}><Registration/></ModalBox>
+    Login: <ModalBox setModalBox={setModalBox}><Login /></ModalBox>,
+    Registration: <ModalBox setModalBox={setModalBox}><Registration /></ModalBox>
   }
 
 
   return (
     <div className="App">
       <Header setPage={setPage} setModalBox={setModalBox} />
-      {page === 'Main' && <HeroInfo setPage={setPage}/>}
+      {page === 'Main' && <HeroInfo setPage={setPage} />}
       {page === 'Main' && <Brands />}
       {pages[page]()}
-      {modalBoxes [modalBox]}
+      {modalBoxes[modalBox]}
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
-import React from 'react';
 import './modalBox.css';
+import React from 'react';
 
 const ModalBox = ({ setModalBox, children }) => {
     return (
@@ -8,6 +8,7 @@ const ModalBox = ({ setModalBox, children }) => {
             <div className="modalBox">
                 {React.cloneElement(children, { setModalBox })}
             </div>
+
         </>
     );
 }

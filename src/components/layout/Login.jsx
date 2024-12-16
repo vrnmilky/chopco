@@ -1,6 +1,6 @@
-const Login = ({setModalBox}) => {
+const Login = ({ setModalBox }) => {
 
-    function Log(){
+    function Log() {
         const login = document.getElementById('login').value
         const password = document.getElementById('password').value
         const data = {
@@ -9,15 +9,15 @@ const Login = ({setModalBox}) => {
         }
     }
 
-    return ( 
+    return (
         <>
-        <h1>Login</h1>
-        <input id="login" placeholder='Login' type="text" / >
-        <input id="password" placeholder='Password' type="password"/>
-        <button onClick={Log}>Войти</button>
-        <a onClick={() => setModalBox('Registration')} href="#!">Need to register? Registration</a>
+            <h1>Login</h1>
+            <input id="login" placeholder='Login' type="text" />
+            <input id="password" placeholder='Password' type="password" />
+            <button onClick={Log}>Войти</button>
+            <a onClick={() => setModalBox('Registration')} href="#!">Need to register? Registration</a>
         </>
-     );
+    );
 }
- 
+
 export default Login;
