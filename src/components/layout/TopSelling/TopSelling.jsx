@@ -1,17 +1,17 @@
 import Card from '../Card/Card';
-import './arrivals.css'
-import arrImg1 from './../../img/body/arrivals/arrivals1.jpg'
-import arrImg2 from './../../img/body/arrivals/arrivals2.jpg'
-import arrImg3 from './../../img/body/arrivals/arrivals3.jpg'
-import arrImg4 from './../../img/body/arrivals/arrivals4.jpg'
+import './topselling.css'
+import arrImg1 from './../../img/body/top-selling/top-selling1.jpg'
+import arrImg2 from './../../img/body/top-selling/top-selling2.jpg'
+import arrImg3 from './../../img/body/top-selling/top-selling3.jpg'
+import arrImg4 from './../../img/body/top-selling/top-selling4.jpg'
 
-const Arrivals = ({setPage}) => {
+const TopSelling = ({setPage}) => {
     return (
-        <section className="arrivals">
+        <section className="top__selling">
             <div className="container">
-                <div className="arrivals__container">
-                    <div className="arrivals__title">
-                        NEW ARRIVALS
+                <div className="top__selling--container">
+                    <div className="top__selling--title">
+                        TOP SELLING
                     </div>
                     <div className="card__container">
                         <Card title='T-Shirt With Tape Details' img={arrImg1}/>
@@ -28,4 +28,4 @@ const Arrivals = ({setPage}) => {
     );
 }
 
-export default Arrivals;
+export default TopSelling;

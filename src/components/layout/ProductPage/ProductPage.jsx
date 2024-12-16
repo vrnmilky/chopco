@@ -1,15 +1,15 @@
 import Card from '../Card/Card';
-import './mainArrivals.css'
+import './productPage.css'
 import arrImg1 from './../../img/body/arrivals/arrivals1.jpg'
 import Filter from '../Filter/Filter';
 
 
-const MainArrivals = () => {
+const ProductPage = () => {
     return (
         <div className="container">
-            <div className="MainArrivals-body">
+            <div className="productPage-body">
             <Filter/>
-            <div className="main_arrivals-container">
+            <div className="productPage-container">
                 <Card title='T-Shirt With Tape Details' img={arrImg1} />
                 <Card title='T-Shirt With Tape Details' img={arrImg1} />
                 <Card title='T-Shirt With Tape Details' img={arrImg1} />
@@ -25,4 +25,4 @@ const MainArrivals = () => {
     );
 }
 
-export default MainArrivals;
+export default ProductPage;

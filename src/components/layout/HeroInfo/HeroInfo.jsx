@@ -4,7 +4,7 @@ import starImg from './../../img/header/star.png'
 import starImg1 from './../../img/header/star-1.png'
 
 
-const heroInfo = () => {
+const heroInfo = ({setPage}) => {
     return (
         <div>
             <div className="hero__info-bg">
@@ -18,7 +18,7 @@ const heroInfo = () => {
                                     designed to bring out your individuality and cater to your sense of
                                     style.
                                 </div>
-                                <a href="#!" className="hero__info__btn">
+                                <a onClick={()=> setPage('ProductPage')} href="#!" className="hero__info__btn">
                                     Shop Now
                                 </a>
                             </div>

@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
-import Arrivals from './components/layout/Arrivals/Arrivals';
 import Brands from './components/layout/Brands/Brands';
 import Cart from './components/views/Cart/Cart';
 import ModalBox from './components/modalBox/ModalBox';
 import Login from './components/layout/Login';
 import Registration from './components/layout/Registration';
-import MainArrivals from './components/layout/Arrivals/MainArrivals';
 import HeroInfo from './components/layout/HeroInfo/HeroInfo';
+import ProductPage from './components/layout/ProductPage/ProductPage'
+import Main from './components/layout/Main/Main'
 
 function App() {
   const [page, setPage] = useState('Main')
   const [modalBox, setModalBox] = useState('')
 
   const pages = {
-    Main: () => <Arrivals setPage={setPage} />,
+    Main: () => <Main setPage={setPage} />,
     Cart: () => <Cart setPage={setPage} />,
-    MainArrivals: () => <MainArrivals />
+    ProductPage: () => <ProductPage/>
   }
   const modalBoxes = {
     none: null,
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <Header setPage={setPage} setModalBox={setModalBox} />
-      {page === 'Main' && <HeroInfo />}
+      {page === 'Main' && <HeroInfo setPage={setPage}/>}
       {page === 'Main' && <Brands />}
       {pages[page]()}
       {modalBoxes [modalBox]}
