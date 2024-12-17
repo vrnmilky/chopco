@@ -28,11 +28,11 @@ function App() {
 
   return (
     <div className="App">
+      {modalBoxes[modalBox]}
       <Header setPage={setPage} setModalBox={setModalBox} />
       {page === 'Main' && <HeroInfo setPage={setPage} />}
       {page === 'Main' && <Brands />}
       {pages[page]()}
-      {modalBoxes[modalBox]}
       <Footer />
     </div>
   );
