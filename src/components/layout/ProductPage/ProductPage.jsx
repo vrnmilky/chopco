@@ -29,7 +29,7 @@ const ProductPage = () => {
                 <Filter />
                 <div className="productPage-container">
                     {products.map((item) =>
-                        <Card key={item.id}
+                        <Card key={item._id}
                             title={item.title}
                             image={item.image}
                             price={item.price}

@@ -1,7 +1,8 @@
 import { useState } from "react";
 
 const Login = ({ setModalBox }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLogMessage, setLogMessage] = useState(false);
+    const [isLogMessageBad, setLogMessageBad] = useState(false);
     const [message, setMessage] = useState('');
 
     function Log() {
@@ -24,12 +25,15 @@ const Login = ({ setModalBox }) => {
         })
             .then(result => result.json())
             .then((result) => {
-                console.log(result);
                 if (result.success) {
-                    setIsLoggedIn(true);
-                    setMessage(result.message || 'Вы успешно авторизовались!');
+                    localStorage.setItem('token', result.token)
+                    setLogMessage(true);
+                    setMessage(result.message);
+                    setTimeout(() => { setModalBox('none'); }, 500);
+
                 } else {
-                    setMessage(result.message || 'Неверный логин или пароль');
+                    setLogMessageBad(true);
+                    setMessage(result.message);
                 }
             })
             .catch((error) => {
@@ -40,18 +44,25 @@ const Login = ({ setModalBox }) => {
 
     return (
         <>
-            {isLoggedIn ? (
-                <div>
+            {isLogMessage ? (
+                <div className="isRegMessage">
                     <h1>{message}</h1>
                 </div>
             ) : (
-                <>
-                    <h1>Login</h1>
-                    <input id="login" placeholder='Login' type="text" />
-                    <input id="password" placeholder='Password' type="password" />
-                    <button onClick={Log}>Войти</button>
-                    <a onClick={() => setModalBox('Registration')} href="#!">Need to register? Registration</a>
-                </>
+                isLogMessageBad ? (
+                    <div className="isRegMessage">
+                        <h1>{message}</h1>
+                        <a className="login--reg" onClick={() => setModalBox('Registration')} href="#!">Registration</a>
+                    </div>
+                ) : (
+                    <>
+                        <h1>Login</h1>
+                        <input id="login" placeholder='Login' type="text" />
+                        <input id="password" placeholder='Password' type="password" />
+                        <button onClick={Log}>Войти</button>
+                        <a onClick={() => setModalBox('Registration')} href="#!">Need to register? Registration</a>
+                    </>
+                )
             )}
         </>
     );

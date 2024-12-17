@@ -1,10 +1,14 @@
-
 const PORT = 9001
+const URLDB = 'mongodb://127.0.0.1:27017'
 
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
+
+const {secret} = require('./config')
+const User = require('./models/User')
+const Product = require('./models/Product')
 
 
 const app = express()
@@ -12,47 +16,61 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.post('/registration', (req, res) => {
+const generateAccessToken = (id) => {
+    const payload = {
+        id
+    }
+    return jwt.sign(payload, secret, {expiresIn: '24h'})
+}
+
+app.post('/registration', async (req, res) => {
     console.log(req.body)
+    const { login, password, email } = req.body
+    const user = new User({ login, password, email })
+    const existingUser = await User.findOne({ login });
+    if (existingUser) {
+        return res.status(400).json({ message: 'Логин уже используется!' });
+    }
+    await user.save()
     res.json({
         message: 'Вы успешно зарегистрировались!'
     })
 })
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     console.log(req.body)
+    const { login, password } = req.body
+    const user = await User.findOne({ login })
+    if (!user) {
+        return res.status(400).json({message: 'Пользователь не найден!'})
+    }
+    if (user.password !== password) {
+        return res.status(400).json({message: 'Неверный логин или пароль!'})
+    }
+    const token = generateAccessToken(user._id)
     res.json({
         success: true,
-        message: 'Вы успешно авторизовались!'
+        message: 'Вы успешно авторизовались!',
+        token: token
     })
 })
 
-app.get('/products', (req, res) => {
-
-
-    const products = [
-        { id: 1, title: 'Title 1', price: 260, rating: 4.5 },
-        { id: 2, title: 'Title 2', price: 224, rating: 4.3 },
-        { id: 3, title: 'Title 3', price: 123, rating: 4.2 },
-        { id: 4, title: 'Title 4', price: 55, rating: 4.1 },
-        { id: 5, title: 'Title 5', price: 63, rating: 4.7 },
-        { id: 6, title: 'Title 6', price: 523, rating: 3.5 },
-        { id: 7, title: 'Title 7', price: 11, rating: 3.1 },
-        { id: 8, title: 'Title 8', price: 116, rating: 3.4 },
-        { id: 9, title: 'Title 9', price: 66, rating: 3.3 }
-    ]
+app.get('/products', async (req, res) => {
+    
+    const products = await Product.find()
 
     res.json({
         data: products
     })
 })
 
-const start = () => {
+const start = async () => {
     try {
+        await mongoose.connect(URLDB, { authSource: 'admin' })
         app.listen(PORT, () => console.log(`Сервер запущен на ${PORT} порте`))
-    } catch (e){
+    } catch (e) {
         console.log(e)
-    }   
+    }
 }
 
 
