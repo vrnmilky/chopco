@@ -53,4 +53,21 @@
 .card__price {
     font-family: satoshi-bold;
     font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+
+
+.card__link:hover:after{
+    content: "To cart";
+    font-size: 24px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    top: calc(149px - 15px);
+    left: calc(50% - 40px);
+} 

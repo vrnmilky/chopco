@@ -19,6 +19,7 @@ const Card = ({title, image, price, rating }) => {
                 <div className="card__price">
                  ${price}
                 </div>
+                
             </div>
         </div>
      );
