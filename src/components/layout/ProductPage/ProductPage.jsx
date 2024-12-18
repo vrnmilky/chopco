@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import Card from '../Card/Card';
 import './productPage.css'
-import image from './../../img/body/arrivals/arrivals1.jpg'
 import Filter from '../Filter/Filter';
 
 
@@ -29,7 +28,7 @@ const ProductPage = () => {
                 <Filter />
                 <div className="productPage-container">
                     {products.map((item) =>
-                        <Card key={item._id}
+                        <Card id={item._id}
                             title={item.title}
                             image={item.image}
                             price={item.price}

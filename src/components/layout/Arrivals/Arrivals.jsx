@@ -28,7 +28,7 @@ const Arrivals = ({ setPage }) => {
                     </div>
                     <div className="card__container">
                         {products.map((item) =>
-                            <Card key={item.id}
+                            <Card id={item._id}
                                 title={item.title}
                                 image={item.image}
                                 price={item.price}
