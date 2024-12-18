@@ -4,7 +4,7 @@ import searchImg from './../../img/header/nav/search.svg';
 import loginImg from './../../img/header/nav/login.svg';
 import shoppingImg from './../../img/header/nav/shopping.svg';
 
-
+// 
 import './header.css';
 
 function Header({ setPage, setModalBox }) {
@@ -31,6 +31,7 @@ function Header({ setPage, setModalBox }) {
           </div>
         </div>
       </div>
+      <a onClick={()=> setModalBox('AddProduct')} className="btn btn__add" href="#!">Добавить товар!</a>
     </header>
   );
 }

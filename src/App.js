@@ -9,6 +9,7 @@ import Registration from './components/layout/Registration';
 import HeroInfo from './components/layout/HeroInfo/HeroInfo';
 import ProductPage from './components/layout/ProductPage/ProductPage'
 import Main from './components/layout/Main/Main'
+import AddProduct from './components/views/AddProduct/AddProduct';
 
 function App() {
   const [page, setPage] = useState('Main')
@@ -22,7 +23,8 @@ function App() {
   const modalBoxes = {
     none: null,
     Login: <ModalBox setModalBox={setModalBox}><Login /></ModalBox>,
-    Registration: <ModalBox setModalBox={setModalBox}><Registration /></ModalBox>
+    Registration: <ModalBox setModalBox={setModalBox}><Registration /></ModalBox>,
+    AddProduct: <ModalBox setModalBox={setModalBox}><AddProduct /></ModalBox>
   }
 
 
