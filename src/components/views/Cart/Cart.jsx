@@ -1,12 +1,14 @@
 import './cart.css'
 import CartProduct from '../CartProduct/CartProduct';
+import ProductInfo from '../../layout/ProductPage/ProductInfo';
 
 const cart = () => {
     return (
         <section className='cart'>
             <div className="container container-borderTop">
                 <h1 className='cart__title'>Your cart</h1>
-                <div className="cart__container">
+                <ProductInfo/>
+                {/* <div className="cart__container">
                     <div className="cart__container--product">
                         <CartProduct />
                         <CartProduct />
@@ -19,11 +21,8 @@ const cart = () => {
                             <div className="cart__container-order-subtotal">
                             </div>
                         </div>
-
-
-
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );
