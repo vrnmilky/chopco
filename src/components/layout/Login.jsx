@@ -82,7 +82,10 @@ const Login = ({ setModalBox }) => {
     return (
         <div>
             {isTokenValid ? (
-                <h1>Hello! {userName}</h1>
+                <div className="Hello__title">
+                    <p>Hello!</p>
+                    <h1>{userName}</h1>
+                </div>
             ) : (
                 <>
                     {isLogMessage ? (
