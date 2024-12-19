@@ -55,6 +55,36 @@ app.post('/login', async (req, res) => {
     })
 })
 
+app.post('/checkToken', async (req, res) => {
+    const { token } = req.body
+
+    if (!token) {
+        return res.status(400).json({ message: 'Пустой токен' });
+    }
+
+    try {
+        // Попытка декодирования токена
+        const decoded = jwt.verify(token, secret);
+
+        const userId = decoded.id;
+        console.log("Декодированный ID пользователя:", userId);
+
+        const user = await User.findById(userId);
+        
+        if (!user) {
+            return res.status(404).json({ message: 'Пользователь не найден' });
+        }
+
+        return res.json({
+            name: user.login,
+        });
+
+    } catch (error) {
+        console.error("Ошибка при декодировании токена:", error.message);
+        return res.status(401).json({ message: 'Неверный токен или токен просрочен' });
+    }
+})
+
 app.get('/products', async (req, res) => {
 
     const products = await Product.find()
@@ -63,6 +93,7 @@ app.get('/products', async (req, res) => {
         data: products
     })
 })
+
 
 
 app.post('/add', async (req, res) => {
